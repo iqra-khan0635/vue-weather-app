@@ -43,6 +43,7 @@ export default {
   data() {
     return {
       API_KEY: "1782fa6b14424802b20162502241801",
+      BASE_URL: "https://api.weatherapi.com/v1",
       search: "",
       loadingSuggestions: false,
       suggestedResult: null,
@@ -64,7 +65,7 @@ export default {
         };
 
         await axios
-          .get(`http://api.weatherapi.com/v1/search.json`, { params })
+          .get(`${this.BASE_URL}/search.json`, { params })
           .then((response) => {
             this.suggestedResult = response.data;
           })
@@ -91,7 +92,7 @@ export default {
       };
 
       await axios
-        .get(`http://api.weatherapi.com/v1/forecast.json`, { params })
+        .get(`${this.BASE_URL}/forecast.json`, { params })
         .then((response) => {
           this.weatherList.unshift(response.data);
         })
