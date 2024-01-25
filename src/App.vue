@@ -17,7 +17,7 @@
       </div>
 
       <!-- Weather Card -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         <WeatherCard
           :weather="data"
           v-for="(data, idx) in weatherList"
@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     async searchPlaces() {
-      if (this.search && this.search.length >= 3) {
+      if (this.search) {
         this.loadingSuggestions = true;
         const params = {
           key: this.API_KEY,
@@ -93,7 +93,7 @@ export default {
       await axios
         .get(`http://api.weatherapi.com/v1/forecast.json`, { params })
         .then((response) => {
-          this.weatherList.push(response.data);
+          this.weatherList.unshift(response.data);
         })
         .catch((error) => {
           console.error("Error:", error);
