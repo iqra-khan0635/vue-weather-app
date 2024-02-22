@@ -38,7 +38,7 @@ This is a simple web-based Weather App built with Vue.js and Tailwind. The appli
 
 3. View the current weather details and the 3-day forecast.
 
-4. For the online demo. Visits [Vue Weather Web App](https://vue-weather-web-app.netlify.app/)
+4. For the online demo. Visits [Vue Weather Web App](https://iqra-vue-weather-web-app.netlify.app/)
 
 ## Technologies Used
 
